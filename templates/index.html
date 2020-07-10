@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sentiment Analysis</title>
+</head>
+<body>
+
+	<h1>Sentiment Analysis</h1>
+
+	{% if sentiment %}
+		{% if sentiment==1 %}
+			<h3 style="color:green">Positive</h3>
+		{% endif %}
+		{% if sentiment==-1 %}
+			<h3 style="color:red">Negative</h3>
+		{% endif %}
+	{% endif %}
+
+	<form action="/predict" method="POST">
+		<label>Enter the review</label><br>
+		<textarea name="review"></textarea><br><br>
+
+		<input type="submit" name="" value="Predict Sentiment">
+	</form>
+
+</body>
+</html>
